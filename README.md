@@ -1,4 +1,5 @@
-# WebdriverIO + Allure reporter + TypesScript
+# Legacy Util based on webdriverIO v4. Unmaintained
+## WebdriverIO + Allure reporter + TypesScript
 
 ---
 
