@@ -674,14 +674,16 @@ export namespace BrowserUtils {
     tryBlock(
       () =>
         browser.waitUntil(() => {
-          try {
-            return expectedText === browser.getAlertText();
-          } catch (e) {
-            return false;
-          }
+          return browser.isAlertOpen();
         }),
-      "Incorrect alert's text or alert not found."
+      'Alert not found'
     );
+
+    tryBlock(() => {
+      if (expectedText !== browser.getAlertText()) {
+        throw new Error();
+      }
+    }, "Incorrect alert's text");
   }
 
   /**
